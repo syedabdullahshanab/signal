@@ -1,6 +1,6 @@
 # Signal
 
-Signal is a link-shareable video meeting app built with Next.js and LiveKit Cloud. People can enter a display name, join a room, use camera and microphone, and chat during the meeting.
+Signal is a link-shareable video meeting app built with Next.js and LiveKit Cloud. The responsive meeting experience includes participant and screen-share layouts, device controls, chat and participant drawers, reactions, and persisted light/dark themes.
 
 ## Local setup
 
@@ -23,7 +23,7 @@ Open `http://localhost:3000`, create a room, and send the room URL to another br
 
 ## Environment variables
 
-`LIVEKIT_API_KEY` and `LIVEKIT_API_SECRET` are server-only credentials used by `/api/token`. `NEXT_PUBLIC_LIVEKIT_URL` is the public LiveKit WebSocket URL and is safe to expose to the browser.
+`LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET`, and `LIVEKIT_URL` are server-only values used by `/api/token`. For existing setups, `NEXT_PUBLIC_LIVEKIT_URL` is also accepted as a fallback.
 
 ## Checks
 
@@ -32,4 +32,4 @@ npm run lint
 npm run build
 ```
 
-Chat is realtime and ephemeral in this first version. Accounts, recording, moderation, persistent chat history, and screen sharing are intentionally not included.
+Chat and reactions are realtime and ephemeral. Accounts, recording, moderation, and persistent chat history are not included.

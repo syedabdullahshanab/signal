@@ -6,13 +6,13 @@ export const runtime = "nodejs";
 export async function POST(request: Request) {
   const apiKey = process.env.LIVEKIT_API_KEY;
   const apiSecret = process.env.LIVEKIT_API_SECRET;
-  const livekitUrl = process.env.NEXT_PUBLIC_LIVEKIT_URL;
+  const livekitUrl = process.env.LIVEKIT_URL || process.env.NEXT_PUBLIC_LIVEKIT_URL;
 
   if (!apiKey || !apiSecret || !livekitUrl) {
     const missing = [
       !apiKey && "LIVEKIT_API_KEY",
       !apiSecret && "LIVEKIT_API_SECRET",
-      !livekitUrl && "NEXT_PUBLIC_LIVEKIT_URL",
+      !livekitUrl && "LIVEKIT_URL (or NEXT_PUBLIC_LIVEKIT_URL)",
     ].filter(Boolean);
 
     return NextResponse.json({

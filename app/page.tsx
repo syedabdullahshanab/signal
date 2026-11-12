@@ -4,6 +4,7 @@
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { ThemeToggle } from "../components/theme/ThemeToggle";
 
 function createRoomId() {
   return Math.random().toString(36).slice(2, 8).toUpperCase();
@@ -38,7 +39,10 @@ export default function Home() {
           <span className="brand-mark" aria-hidden="true">S</span>
           <span>signal</span>
         </Link>
-        <span className="topbar-note">Conversation, in focus.</span>
+        <div className="home-header-actions">
+          <span className="topbar-note">Conversation, in focus.</span>
+          <ThemeToggle />
+        </div>
       </nav>
 
       <section className="hero-grid">
